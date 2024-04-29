@@ -35,7 +35,13 @@ function onFormSubmit(event) {
   const messageValue = event.currentTarget.message.value;
   if (emailValue === '' || messageValue === '') {
     alert('Fill please all fields');
+    return;
   }
+
+  formData.email = emailValue;
+  formData.message = messageValue;
+  console.log(formData);
+
   localStorage.removeItem(localStorageKey);
   event.currentTarget.reset();
 }
